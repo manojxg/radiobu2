@@ -25,12 +25,11 @@ pipeline {
             steps {
                 script {
                     if (params.ENV_TYPE == 'A') {
-                        echo "subnet-ab9019anbdhda"
-			MY_VARIABLE = "subnet-ab9019anbdhda"
+                        MY_VARIABLE = "subnet-ab9019anbdhda"
                     } else if (params.ENV_TYPE == 'B') {
-                        echo "subnet-ab9019anbdhdb"
+                        MY_VARIABLE = "subnet-ab9019anbdhdb"
                     } else if (params.ENV_TYPE == 'C') {
-                        echo "subnet-ab9019anbdhdc"
+                        MY_VARIABLE = "subnet-ab9019anbdhdc"
                     } else {
                         echo "Unknown environment!"
                     }
