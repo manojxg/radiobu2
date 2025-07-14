@@ -4,7 +4,7 @@ pipeline {
     parameters {
         choice(
             name: 'ENV_TYPE',
-            choices: ['dev', 'stage', 'prod'],
+            choices: ['A', 'B', 'C'],
             description: 'Select environment type'
         )
     }
@@ -23,12 +23,12 @@ pipeline {
         stage('Deploy Based on ENV_TYPE') {
             steps {
                 script {
-                    if (params.ENV_TYPE == 'dev') {
-                        echo "Running development tasks..."
-                    } else if (params.ENV_TYPE == 'stage') {
-                        echo "Running staging tasks..."
-                    } else if (params.ENV_TYPE == 'prod') {
-                        echo "Running production tasks..."
+                    if (params.ENV_TYPE == 'A') {
+                        echo "subnet-ab9019anbdhda"
+                    } else if (params.ENV_TYPE == 'B') {
+                        echo "subnet-ab9019anbdhdb"
+                    } else if (params.ENV_TYPE == 'C') {
+                        echo "subnet-ab9019anbdhdc"
                     } else {
                         echo "Unknown environment!"
                     }
