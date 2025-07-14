@@ -19,6 +19,17 @@ pipeline {
                 }
             }
         }
+        stage('Do something fun') {
+            steps {
+                script{
+				        subnetazA = params['ENV_TYPE']
+                        venv.exec("chmod +x ./fun.sh")
+                        venv.exec("./fun.sh ${amiid} ${keypair} ${subnetazA}")
+ 
+            }
+        }
+
+    }
 
         stage('Deploy Based on ENV_TYPE') {
             steps {
