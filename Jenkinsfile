@@ -22,9 +22,9 @@ pipeline {
         stage('Do something fun') {
             steps {
                 script{
-			subnetazA = params['ENV_TYPE']
+			// subnetazA = params['ENV_TYPE']
                         sh "chmod +x ./fun.sh"
-                        sh "./fun.sh ${subnetazA}"
+                        sh "./fun.sh ${ENV_TYPE}"
  
             }
         }
