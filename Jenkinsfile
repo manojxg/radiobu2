@@ -24,7 +24,7 @@ pipeline {
                 script{
 			subnetazA = params['ENV_TYPE']
                         sh "chmod +x ./fun.sh"
-                        sh "./fun.sh ${amiid} ${keypair} ${subnetazA}"
+                        sh "./fun.sh ${subnetazA}"
  
             }
         }
