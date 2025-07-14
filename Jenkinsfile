@@ -15,7 +15,7 @@ pipeline {
                 script {
                     // Calling ENV_TYPE parameter
                     def env = params.ENV_TYPE
-                    echo "You selected environment: $env"
+                  //  echo "You selected environment: $env"
                 }
             }
         }
