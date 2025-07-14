@@ -19,23 +19,14 @@ pipeline {
                 }
             }
         }
-        stage('Do something fun') {
-            steps {
-                script{
-			subnetazA = params['ENV_TYPE']
-                        sh "chmod +x ./fun.sh"
-                        sh "./fun.sh $env"
- 
-            }
-        }
-
-    }
+        
 
         stage('Deploy Based on ENV_TYPE') {
             steps {
                 script {
                     if (params.ENV_TYPE == 'A') {
                         echo "subnet-ab9019anbdhda"
+			MY_VARIABLE = "subnet-ab9019anbdhda"
                     } else if (params.ENV_TYPE == 'B') {
                         echo "subnet-ab9019anbdhdb"
                     } else if (params.ENV_TYPE == 'C') {
@@ -46,5 +37,16 @@ pipeline {
                 }
             }
         }
+    }
+	stage('Do something fun') {
+            steps {
+                script{
+			subnetazA = params['ENV_TYPE']
+                        sh "chmod +x ./fun.sh"
+                        sh "./fun.sh $MY_VARIABLE"
+ 
+            }
+        }
+
     }
 }
